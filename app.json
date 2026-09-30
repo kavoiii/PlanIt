@@ -12,6 +12,7 @@
   "bundleIdentifier": "com.kavyagauri.planit"
 },
     "android": {
+      "package": "com.kavyagauri.planit",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
