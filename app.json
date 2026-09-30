@@ -8,8 +8,9 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
-    },
+  "supportsTablet": true,
+  "bundleIdentifier": "com.kavyagauri.planit"
+},
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
