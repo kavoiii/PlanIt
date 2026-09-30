@@ -39,3 +39,15 @@ Docs: https://docs.expo.dev/eas/index.md
 - If `ios/` and `android/` directories do not exist, they are generated (Continuous Native Generation). Never create or edit them by hand — configure native behavior in `app.json` and config plugins.
 - Expo Go only includes its bundled native modules. After adding a library with native code, the app needs a development build: `npx expo run:ios|android` locally, or `eas build --profile development`.
 - Prefer recommended Expo modules over third-party libraries, and check your available skills before adding dependencies. Docs: https://docs.expo.dev/versions/latest/index.md
+
+## PlanIt product constraints
+
+- PlanIt is an offline-first Alarm, Reminder, and Daily Planner for Android and iOS, targeting 7 October 2026.
+- Keep the design simple and focused; use SOLID/SRP only where it helps. Do not add repositories, controllers, use cases, factories, or dependency injection without a real need.
+- SQLite is the persistent source of truth. Zustand is permitted only for transient application/UI state and must not duplicate database data.
+- Google Drive is the planned backup, but do not implement it until requested. Do not add a backend, Firebase, Supabase, or primary AsyncStorage storage.
+- Today is the landing screen. The bottom tabs are Today, Planner, Alarms, and Tasks. Alarms can belong to routines; the Eisenhower Matrix belongs under Tasks; reminders do not get their own tab.
+- Do not implement Quick Add, database schemas, alarm/notification behavior, Google Drive backup, or a broad type system until the product data model is agreed.
+- Do not add Tailwind/nativewind, Redux, separate React Navigation, or AI features.
+- Keep visual tokens centralized in `src/constants`. Do not create empty or speculative files.
+- Build a mobile productivity product, never a marketing website or AI-assistant interface.
