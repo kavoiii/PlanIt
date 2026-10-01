@@ -10,9 +10,6 @@ import { useEffect, useState } from 'react';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { DatePicker, Host } from '@expo/ui/swift-ui';
-import { datePickerStyle } from '@expo/ui/swift-ui/modifiers';
-
 import {
   createAlarm,
   getAlarms,
@@ -24,6 +21,7 @@ import { colors } from '../constants/colors';
 import { radius } from '../constants/radius';
 import { spacing } from '../constants/spacing';
 import { typography } from '../constants/typography';
+import { AlarmTimePicker } from '../components/alarms/AlarmTimePicker';
 
 export default function AddAlarmScreen() {
   const [selectedTime, setSelectedTime] = useState(new Date());
@@ -160,15 +158,7 @@ export default function AddAlarmScreen() {
         <Text style={styles.sectionLabel}>TIME</Text>
 
         <View style={styles.timeCard}>
-          <Host style={styles.timePickerHost}>
-            <DatePicker
-              title=""
-              selection={selectedTime}
-              displayedComponents={['hourAndMinute']}
-              onDateChange={setSelectedTime}
-              modifiers={[datePickerStyle('wheel')]}
-            />
-          </Host>
+          <AlarmTimePicker value={selectedTime} onChange={setSelectedTime} />
         </View>
 
         <Text
@@ -315,11 +305,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: colors.border,
-  },
-
-  timePickerHost: {
-    width: '100%',
-    height: spacing.xxxl * 3,
   },
 
   fieldLabel: {
