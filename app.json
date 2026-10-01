@@ -13,6 +13,9 @@
 },
     "android": {
       "package": "com.kavyagauri.planit",
+      "permissions": [
+    "android.permission.SCHEDULE_EXACT_ALARM"
+     ],  
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
